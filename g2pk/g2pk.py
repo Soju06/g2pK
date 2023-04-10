@@ -6,7 +6,7 @@ https://github.com/kyubyong/g2pK
 import os, re
 
 import nltk
-import mecab
+import MeCab
 from jamo import h2j
 from nltk.corpus import cmudict
 
@@ -35,10 +35,10 @@ class G2p(object):
 
     def get_mecab(self):
         try:
-            return mecab.MeCab()
+            return MeCab.Tagger()
         except Exception as e:
             raise Exception(
-                'If you want to install mecab, The command is... pip install python-mecab-ko'
+                'MeCab이가 설치되어 있지 않습니다. https://wonhwa.tistory.com/49 를 참고하여 구성해주세요.'
             )
 
     def idioms(self, string, descriptive=False, verbose=False):

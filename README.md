@@ -2,26 +2,44 @@
 [![image](https://img.shields.io/pypi/l/g2pk.svg)](https://pypi.org/project/g2pk/)
 [![image](https://img.shields.io/pypi/pyversions/g2pk.svg)](https://pypi.org/project/g2pk/)
 
-# g2pK: g2p module for Korean
+# g2pK-msvc: MSVC Windows용 Mecab 한국어 g2p 모듈 
 
 g2p means a task that converts graphemes to phonemes. Hangul, the main script for Korean, is phonetic, but the pronunciation rules are notoriously complicated.
 So it is never easy to learn how to read a text in Korean. That's why g2p is necessary in various nlp tasks like TTS.
 . There's a open source g2p library for Korean, [KoG2P](https://github.com/scarletcho/KoG2P). It is 
-simple and works well, but I think we need a better one. Please read through the following section (main features and usage)
+simple and works well, but I think we need a better one. Please read through the following section (main features and usage)`
 to understand the philosophy of g2pK and how to use g2pK. We know it is not perfect in present. 
 That's one of the reasons your contributions are more than welcome.
 
 ## Requirements
 * python >= 3.6
-* jamo
-* [python-mecab-ko](https://github.com/jonghwanhyeon/python-mecab-ko)
-* konlpy
+* jam
 * nltk
+* [mecab-python-msvc](https://github.com/Pusnow/mecab-python-msvc)
 
 ## Installation
-```
-pip install g2pk
-```
+
+g2pk-msvc를 사용하려면 [mecab-python-msvc](https://github.com/Pusnow/mecab-python-msvc)패키지가 설치되어있어야 합니다.
+
+또한 `C:\mecab\` 경로에 [mecab-ko-msvc](https://github.com/Pusnow/mecab-ko-msvc)와 [mecab-ko-dic-msvc](https://github.com/Pusnow/mecab-ko-dic-msvc)파일이 구성되어있어야 합니다.
+
+[mecab-python-msvc](https://github.com/Pusnow/mecab-python-msvc) 설치방법은 https://wonhwa.tistory.com/49 를 참고하세요.
+
+
+1. g2pK-msvc 래포지토리를 복제합니다.
+   ```bash
+    git clone https://github.com/Soju06/g2pK-msvc.git
+    ```
+
+2. g2pK-msvc 래포지토리로 이동합니다.
+   ```bash
+    cd g2pK-msvc
+    ```
+
+3. g2pK-msvc를 설치합니다.
+   ```bash
+    pip install .
+    ```
 
 ## Main features & Usage
 * Returns text as it is pronounced, keeping punctuations.

@@ -6,23 +6,21 @@ with open("README.md", mode="r", encoding="utf-8") as fh:
 REQUIRED_PACKAGES = [
     'jamo',
     'nltk',
-    'konlpy',
-    'python-mecab-ko',
 ]
 
 setuptools.setup(
-    name="g2pK",
+    name="g2pK-msvc",
     version="0.9.3",
-    author="Kyubyong Park",
-    author_email="kbpark.linguist@gmail.com",
-    description="g2pK: g2p module for Korean",
+    author="Soju06",
+    author_email="qlskssk@gmail.com",
+    description="g2pK-msvc: MSVC Windows용 Mecab 한국어 g2p 모듈",
     install_requires=REQUIRED_PACKAGES,
     license='Apache License 2.0',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Kyubyong/g2pK",
+    url="https://github.com/Soju06/g2pK-msvc",
     packages=setuptools.find_packages(),
-    package_data={'g2pk': ['g2pk/idioms.txt', 'g2pk/rules.txt', 'g2pk/table.csv']},
+    package_data={'g2pk-msvc': ['g2pk/idioms.txt', 'g2pk/rules.txt', 'g2pk/table.csv']},
     python_requires=">=3.6",
     include_package_data=True,
     classifiers=[

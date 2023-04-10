@@ -164,7 +164,13 @@ def annotate(string, mecab):
     '''attach pos tags to the given string using Mecab
     mecab: mecab object
     '''
-    tokens = mecab.pos(string)
+    # tokens = mecab.pos(string)
+    tokens = []
+    for line in mecab.parse(string).splitlines():
+        if line == "EOS": break
+        token, tags = line.split("\t")
+        tokens.append((token, tags.split(",")[0]))
+
     if string.replace(" ", "") != "".join(token for token, _ in tokens):
         return string
     blanks = [i for i, char in enumerate(string) if char == " "]
